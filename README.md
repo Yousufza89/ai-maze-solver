@@ -1,82 +1,86 @@
-# ai-maze-solver
-Maze-solving AI using DFS, BFS, and A* algorithms with real-time visualization in Python.
-# AI Maze Solver Using Search Algorithms
+# MindMaze: AI-Powered Labyrinth
 
-This project demonstrates the implementation of classic AI search algorithms—DFS, BFS, and A*—to solve a grid-based maze.
+A dynamic maze board game where AI controls the maze structure, adapting in real-time to player movements and strategies. Players navigate through the shifting labyrinth to reach the center while avoiding AI-generated traps.
 
-## 🔍 Project Overview
+## Project Overview
 
-The objective of this project is to visualize and compare different search algorithms as they attempt to find a path from a start point to a goal in a 2D maze. The algorithms are:
+This implementation is based on the project proposal submitted by Syed Azmeer Un Nabi. The game features an adaptive AI that alters the maze layout using reinforcement learning, increasing the challenge dynamically based on player strategies while ensuring a fair yet unpredictable gameplay experience.
 
-- Depth-First Search (DFS)
-- Breadth-First Search (BFS)
-- A* Search (with Manhattan Distance heuristic)
+## Features
 
-## 🎯 Features
+- Dynamic maze that changes in response to player movements
+- AI-controlled traps, teleporters, and shortcuts
+- Reinforcement learning algorithm that adapts to player strategies
+- Hint system to predict AI's next moves
+- Graphical user interface built with Pygame
 
-- Custom maze design
-- Step-by-step visual representation of each algorithm
-- Real-time pathfinding and comparison
-- Performance benchmarking (time and path length)
+## Installation Requirements
 
-## 📁 Folder Structure
+To run the game, you need:
 
-ai-maze-solver/
-│
-├── main.py # Main game and algorithm controller
-├── maze.py # Maze generation and drawing
-├── dfs.py # Depth-First Search implementation
-├── bfs.py # Breadth-First Search implementation
-├── astar.py # A* Search implementation
-├── utils.py # Utility functions (like heuristics, timers, etc.)
-├── assets/ # Optional: images, fonts, etc.
-├── README.md # Project documentation
-└── report/AI_Maze_Report.pdf # Final report (converted to PDF)
+1. Python 3.7 or higher
+2. Pygame
+3. NumPy
 
+Install the required packages using pip:
 
-## 🛠️ Tech Stack
+```bash
+pip install pygame numpy
+```
 
-- **Language**: Python
-- **Library**: [Pygame](https://www.pygame.org)
-- **Version Control**: Git + GitHub
+## Running the Game
 
-## 🚀 How to Run
+1. Make sure all Python files are in the same directory
+2. Run the main game file:
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/ai-maze-solver.git
-    cd ai-maze-solver
-    ```
+```bash
+python main.py
+```
 
-2. Install dependencies:
-    ```bash
-    pip install pygame
-    ```
+## Game Instructions
 
-3. Run the program:
-    ```bash
-    python main.py
-    ```
+- Use arrow keys to move the player character
+- Reach the green center of the maze to win
+- Avoid red traps
+- Blue tiles are teleporters that transport you to another location
+- Yellow tiles are shortcuts that move you closer to the goal
+- The AI will modify the maze every few turns
+- Use the "Use Hint" button to get predictions about the AI's next modifications (limited uses)
 
-4. Choose the algorithm to visualize and watch it solve the maze.
+## File Structure
 
-## 📊 Algorithm Performance (20x20 Maze)
+- `main.py`: Main game file containing the game loop and rendering logic
+- `maze_generator.py`: Module for generating random mazes
+- `ai_controller.py`: AI implementation using reinforcement learning
+- `player.py`: Player class for tracking position and movement
+- `ui_elements.py`: UI components like buttons and menus
 
-| Algorithm | Avg. Time (s) | Path Length |
-|-----------|---------------|-------------|
-| DFS       | 0.12          | Variable    |
-| BFS       | 0.25          | Optimal     |
-| A*        | 0.18          | Optimal     |
+## Game Rules
 
-## 👨‍💻 Contributors
+- Players must reach the center of the maze while avoiding AI-controlled obstacles
+- The AI modifies the maze layout every few turns based on player actions
+- Players receive a limited number of predictive hints to anticipate maze changes
+- Special tiles (traps, teleportation, and shortcuts) are AI-controlled
 
-- **M. Yousuf Rehan** – DFS, BFS, Maze rendering
-- **Syed Azmeer Un Nabi** – A* algorithm, heuristic design, GUI animations
+## Color Key
 
-## 📄 License
+- White: Open path
+- Black: Wall
+- Green: Goal (center)
+- Red: Trap
+- Blue: Teleporter
+- Yellow: Shortcut
+- Purple: Player
 
-This project is open-source and available under the [MIT License](LICENSE).
+## Future Enhancements
 
-## 📑 Report
+- Multiple difficulty levels
+- Multiple players (competitive or cooperative)
+- More complex AI strategies
+- Sound effects and music
+- Ability to save/load games
+- Additional power-ups and challenges
 
-See the [`report/AI_Maze_Report.pdf`](./report/AI_Maze_Report.pdf) for full project documentation and results.
+## Credits
+
+Developed based on the project proposal by Syed Azmeer Un Nabi for the AI course instructed by Sir Abdullah Yaqoob.
